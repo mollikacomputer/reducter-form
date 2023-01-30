@@ -1,39 +1,8 @@
 import React, { useReducer } from "react";
+import { initialState, reducer } from "../../State/formReducer";
 
 const Form = () => {
-  const initialState={
-    firstName : "",
-    lastName : "",
-    email:"",
-    password:"",
-    education : "",
-    quantity : 0,
-    gender :"",
-    textaria : "",
-    terms: false,
-  };
-  const reducer = (state, action) =>{
-    console.log(action);
-    switch(action.type){
-      case "INPUT":
-        return {
-          ...state,
-          [action.payload.name]: action.payload.value,
-        };
-        case "TEXTARIA":
-          return {
-            ...state,
-            [action.payload.name]: action.payload.value,
-          };
-      case "TOGGLE":
-        return {
-          ...state,
-          terms: !state.terms,
-        };
-        default:
-      return state;
-    }
-  }
+  
   const [state, dispatch] = useReducer(reducer, initialState);
   const submit = (event) =>{
     event.preventDefault();
