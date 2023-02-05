@@ -5,7 +5,6 @@ const LongForm = () => {
 
   const submit = (event) => {
     event.preventDefault();
-
     console.log(state);
   };
 
@@ -26,14 +25,15 @@ const LongForm = () => {
             onBlur={(e) =>
               dispatch({
                 type: "INPUT",
-                payload: { name: e.target.name, value: e.target.value },
+                // payload: { name: event.target.name, value: event.target.value },
+                payload:{name:e.target.name, value:e.target.value},
               })
             }
           />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='lastName'>
-            Last Name
+            Last Name last Name
           </label>
           <input
             type='text'
